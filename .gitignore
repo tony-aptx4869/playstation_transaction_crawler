@@ -1,0 +1,6 @@
+.DS_Store
+/abc/
+/csv_files/
+/json_files/
+/__pycache__/
+config.conf
