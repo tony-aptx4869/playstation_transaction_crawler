@@ -30,7 +30,7 @@ class PlayStationTransactionCrawler:
         'DEPOSIT_VOUCHER': 'Deposit Voucher',
         'VOUCHER_PURCHASE': 'Voucher Purchase',
         'WALLET_FUNDING': 'Wallet Funding',
-        'COMPLETE': 'Complete',
+        'COMPLETE': 'Complete'
     }
 
     def __init__(self, start_date: str = "None", end_date: str = "None",
