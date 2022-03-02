@@ -318,8 +318,7 @@ class PlayStationTransactionCrawler:
                     str(item_dict['productName']), str(item_dict['totalPrice']), str(item_dict['currencyCode']),
                     str(item_dict['marketCode']), str(item_dict['transactionId']), str(item_dict['transactionDate']),
                     str(item_dict['paymentTypeText']), str(item_dict['paymentAmount']), str(item_dict['billingInfo']),
-                    str(item_dict['paymentMethod']), str(item_dict['transactionTypeText']),
-                    str(item_dict['platformId']),
+                    str(item_dict['paymentMethod']), str(item_dict['transactionTypeText']), str(item_dict['platformId']),
                     str(item_dict['ledgerStatus'])
                 ]
                 line_to_write = ",".join(values) + '\n'
