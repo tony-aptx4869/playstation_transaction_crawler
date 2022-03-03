@@ -5,8 +5,7 @@
 
 import requests
 import json
-import datetime
-import time
+from datetime import *
 import os
 from urllib.parse import *
 
@@ -19,7 +18,7 @@ class PlayStationTransactionCrawler:
     order_items_list: list[dict] = []
     has_more_flag: bool = True
     limit_per_page: int = 25
-    date_today: str = time.strftime("%Y-%m-%d", time.localtime())
+    date_today: str = datetime.today().strftime("%Y-%m-%d")
     start_date: str = "2010-01-01T00:00:00.000Z"
     end_date: str
     date_time_now: str
@@ -78,7 +77,7 @@ class PlayStationTransactionCrawler:
         return 0
 
     def updateDateTimeNow(self):
-        self.date_time_now = str(datetime.datetime.utcnow())[:-3].replace(' ', 'T') + "Z"
+        self.date_time_now = str(datetime.utcnow())[:-3].replace(' ', 'T') + "Z"
         return 0
 
     def updateLimitPerPage(self, limit_per_page: int) -> int:
@@ -91,8 +90,8 @@ class PlayStationTransactionCrawler:
 
     @staticmethod
     def dumpToFile(data_to_dump, file_name: str):
-        date_today = time.strftime("%Y-%m-%d", time.localtime())
-        time_now = time.strftime("%H-%M-%S", time.localtime())
+        date_today = datetime.today().strftime("%Y-%m-%d")
+        time_now = datetime.now().strftime("%H-%M-%S")
         dump_path = os.path.join("json_files", date_today)
         if not os.path.exists(dump_path):
             os.makedirs(name=dump_path, exist_ok=True)
@@ -305,7 +304,8 @@ class PlayStationTransactionCrawler:
             csv_file_path_root = os.path.join("csv_files", self.date_today)
             if not os.path.exists(csv_file_path_root):
                 os.makedirs(name=csv_file_path_root, exist_ok=True)
-            csv_file_name = "csv_file_" + time.strftime("%H-%M-%S") + ".csv"
+            time_now = datetime.now().strftime("%H-%M-%S")
+            csv_file_name = "csv_file_" + time_now + ".csv"
             csv_file_path = os.path.join(csv_file_path_root, csv_file_name)
             csv_file = open(file=csv_file_path, mode='w', encoding='utf-8')
             csv_file.writelines("productName,totalPrice,currencyCode,"
