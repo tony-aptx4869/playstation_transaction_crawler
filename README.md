@@ -26,7 +26,7 @@ Whether you are using **API version 2** or **API version 1**, you need to specif
 
 Step 1: Get your own `authorization` or `pdccws_p`
 
-Step 2: Copy the file `config.example.conf` and rename it as `config.conf`
+Step 2: Copy the file `config.conf.example` and rename it as `config.conf`
 
 Step 3: Set your own `authorization` or `pdccws_p` values in the file `config.conf`
 
@@ -36,7 +36,7 @@ Step 5: Run the script `main.py` and the results, a csv file, will be saved in t
 
 第 1 步：获取您自己的 `authorization` 或 `pdccws_p`
 
-第 2 步：复制文件 `config.example.conf` 并将其重命名为 `config.conf`
+第 2 步：复制文件 `config.conf.example` 并将其重命名为 `config.conf`
 
 第 3 步：在文件 `config.conf` 中设置您自己的 `authorization` 或 `pdccws_p` 值
 
