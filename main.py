@@ -3,8 +3,9 @@
 # Python: main.py
 # Description: bala...
 
+import os
 import configparser
-from playstation_transaction_crawler import *
+from playstation_transaction_crawler import PlayStationTransactionCrawler
 
 
 def crawler_method():
@@ -24,8 +25,10 @@ def crawler_method():
     # print(start_date, end_date)
     api_version_2 = conf.get("main", "api_version_2")
 
-    crawler = PlayStationTransactionCrawler(start_date=start_date, end_date=end_date,
-                                            limit_per_page=50, api_version_2=api_version_2)
+    crawler = PlayStationTransactionCrawler(start_date=start_date,
+                                            end_date=end_date,
+                                            limit_per_page=50,
+                                            api_version_2=api_version_2)
     crawler.getTransactions(str_pdccws_p=str_pdccws_p)
     # crawler.getTransactions(str_authorization=str_authorization)
     crawler.generateOrderItemsList()
